@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main()
+{
+    int count = 0;
+    char str[100];
+    char str2[100];
+    int j = 0;
+    printf("nhap vao chuoi ky tu cua ban :");
+    gets(str);
+    while(str[count]!='\0'){
+        count++;
+    }
+    for (int i = count-1; i >= 0; i--){
+        str2[j++]=str[i];
+    }
+   if(!strcmp(str,str2)){
+        printf("day la chuoi palindrome");
+    }
+    else{
+        printf("day khong phai chuoi palindrome");
+    }
+}
