@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+    char str[100];
+    char str_tam[100];
+    char str_insert[100];
+    char str_result[100];
+    int n;
+    int j = 0;
+    printf("nhap vao chuoi ky tu cua ban :");
+    gets(str);
+    printf("nhap chuoi can chen :");
+    gets(str_insert);
+    printf("nhap vi tri");
+    scanf("%d",&n);
+    for(int i = 0; i<n;i++){
+        str_result[i]=str[i];
+    }
+    strcat(str_result,str_insert);
+    for(int i = n; str[i]; i++){
+        str_tam[j++]=str[i];
+    }
+    strcat(str_result,str_tam);
+    printf("%s",str_result);
+}
