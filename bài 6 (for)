@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main()
+{
+    char str[100];
+    char str_insert[100];
+    int n;
+    int j = 0;
+    int count = 0;
+    int count2=0;
+    int result=0;
+    char insert[100];
+    char temp[100];
+    printf("nhap vao chuoi ky tu cua ban :");
+    gets(str);
+    while(str[count]!='\0'){
+        count++;
+    }
+    printf("nhap chuoi can chen :");
+    gets(str_insert);
+    while(str_insert[count2]!='\0'){
+        count2++;
+    }
+    printf("nhap vi tri :");
+    scanf("%d",&n);
+    result = n+count2;
+    for(int i = 0 ; i <n;i++){
+        temp[i]=str[i];
+    }
+        for(int i = n; i<=count2+n;i++){
+            temp[i]=str_insert[j++];
+        }
+            for(int i = n;i<count;i++){
+                temp[result++]=str[i];
+            }
+            printf("%s",temp);
+    }
