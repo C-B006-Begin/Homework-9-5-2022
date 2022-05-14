@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+
+int find_pos(char str[], char c){
+    for (int i = 0; i<strlen(str);i++){
+        if(str[i]==c)
+        return i;
+    }
+    return -1;
+}
+
+int main()
+{
+    char s_grp[1000]="";
+    int len[1000];
+    char str[1000];
+    printf("nhap vao chuoi ky tu cua ban :");
+    gets(str);
+    for(int i = 0; i<strlen(str);i++){
+        int pos = find_pos(s_grp,str[i]);
+        long int m = strlen(s_grp);
+            if(pos==-1){
+                s_grp[m]=str[i];
+                s_grp[m+1]='\0';
+                len[str[i]]=1;
+                continue;
+            }
+             if(len[str[i]]<5){
+                for(int j=m;j>pos;j--){
+                    s_grp[j]=s_grp[j-1];
+                }
+                s_grp[m+1]='\0';
+                s_grp[pos]=str[i];
+                len[str[i]]++;
+                
+            }
+    }
+    printf("%s",s_grp);
+}
