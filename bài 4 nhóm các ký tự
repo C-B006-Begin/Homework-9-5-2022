@@ -35,5 +35,18 @@ int main()
                 
             }
     }
-    printf("%s",s_grp);
+   for(int i = 0; i<strlen(s_grp);i++){
+       if(len[s_grp[i]]>1){
+           int pos = find_pos(s_grp,s_grp[i]);
+           long int m = strlen(s_grp);
+           int j;
+            for(j = m+2;j>pos+len[s_grp[i]];j--){
+                s_grp[j]=s_grp[j-2];
+            }    
+           s_grp[j]='<';
+           s_grp[j+1]='>';
+           len[s_grp[i]]=0;
+       }
+   }
+   printf("%s",s_grp);
 }
