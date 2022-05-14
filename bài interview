@@ -1,7 +1,6 @@
 #include <stdio.h>
 int main()
 {   int n;
-int s = 0;
     printf("nhap vao chuoi ky tu cua ban :");
     scanf("%d",&n);
     for(int i = 0; i<=n;i++){
